@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import rawBody from "@fastify/raw-body";
+import rawBody from "fastify-raw-body";
 
 async function bootstrap() {
   const app = Fastify({ logger: true });
