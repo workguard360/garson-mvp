@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: garson
+      POSTGRES_PASSWORD: garson
+      POSTGRES_DB: garson
+    ports:
+      - "5432:5432"
+    volumes:
+      - garson_db:/var/lib/postgresql/data
+volumes:
+  garson_db:

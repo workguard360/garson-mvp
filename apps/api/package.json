@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "lint": "eslint .",
+    "db:migrate": "prisma migrate dev --name init",
+    "db:seed": "tsx prisma/seed.ts",
+    "prisma:generate": "prisma generate"
+  },
+  "dependencies": {
+    "@garson/shared": "workspace:*",
+    "@prisma/client": "^5.19.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "fastify-cors": "^8.5.0",
+    "fastify-raw-body": "^4.2.0",
+    "nanoid": "^5.0.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "prisma": "^5.19.1",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4",
+    "eslint": "^9.9.0",
+    "@eslint/js": "^9.9.0",
+    "globals": "^15.9.0"
+  }
+}
