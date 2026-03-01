@@ -8,10 +8,11 @@ datasource db {
 }
 
 model Branch {
-  id      String  @id
-  name    String
-  address String?
-  tables  Table[]
+  id        String   @id
+  name      String
+  address   String?
+  tables    Table[]
+  categories MenuCategory[]   // <-- EKLENDİ (MenuCategory'nin karşı relation'ı)
   createdAt DateTime @default(now())
 }
 
@@ -47,15 +48,15 @@ model TableSession {
 }
 
 model SeatClaim {
-  id               String   @id
-  sessionId        String
-  seatId           String
+  id                String   @id
+  sessionId         String
+  seatId            String
   clientFingerprint String
-  claimedUntil     DateTime
-  status           String
-  session          TableSession @relation(fields: [sessionId], references: [id])
-  seat             Seat         @relation(fields: [seatId], references: [id])
-  createdAt        DateTime @default(now())
+  claimedUntil      DateTime
+  status            String
+  session           TableSession @relation(fields: [sessionId], references: [id])
+  seat              Seat         @relation(fields: [seatId], references: [id])
+  createdAt         DateTime @default(now())
   @@index([seatId, claimedUntil, status])
 }
 
@@ -69,15 +70,15 @@ model MenuCategory {
 }
 
 model MenuItem {
-  id          String @id
-  categoryId  String
-  name        String
-  price       Decimal @db.Numeric(10,2)
-  allergens   Json
-  imageUrl    String?
-  isActive    Boolean @default(true)
-  category    MenuCategory @relation(fields: [categoryId], references: [id])
-  createdAt   DateTime @default(now())
+  id         String  @id
+  categoryId String
+  name       String
+  price      Decimal @db.Decimal(10,2) // <-- BURASI @db.Numeric değil @db.Decimal olmalı
+  allergens  Json
+  imageUrl   String?
+  isActive   Boolean @default(true)
+  category   MenuCategory @relation(fields: [categoryId], references: [id])
+  createdAt  DateTime @default(now())
 }
 
 model Order {
@@ -92,10 +93,10 @@ model Order {
 }
 
 model OrderItem {
-  id       String @id
-  orderId  String
-  itemId   String
-  qty      Int
-  notes    String?
-  order    Order  @relation(fields: [orderId], references: [id])
+  id      String @id
+  orderId String
+  itemId  String
+  qty     Int
+  notes   String?
+  order   Order  @relation(fields: [orderId], references: [id])
 }
