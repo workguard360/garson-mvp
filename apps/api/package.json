@@ -11,17 +11,17 @@
     "db:seed": "tsx prisma/seed.ts",
     "prisma:generate": "prisma generate"
   },
-  "dependencies": {
-    "@garson/shared": "workspace:*",
-    "@prisma/client": "^5.19.1",
-    "@fastify/cors": "^7.0.0",
-    "@fastify/raw-body": "^5.2.0",
-    "dotenv": "^16.4.5",
-    "fastify": "^4.28.1",
-    "nanoid": "^5.0.7",
-    "zod": "^3.23.8",
-    "@types/node": "^20.11.0",
-    "typescript": "^5.5.4"
+ "dependencies": {
+  "@garson/shared": "workspace:*",
+  "@prisma/client": "^5.19.1",
+  "@fastify/cors": "^7.0.0",
+  "fastify-raw-body": "^4.2.0",
+  "dotenv": "^16.4.5",
+  "fastify": "^4.28.1",
+  "nanoid": "^5.0.7",
+  "zod": "^3.23.8",
+  "@types/node": "^20.11.0",
+  "typescript": "^5.5.4"
   },
   "devDependencies": {
     "prisma": "^5.19.1",

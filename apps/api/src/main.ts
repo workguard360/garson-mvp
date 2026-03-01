@@ -1,10 +1,9 @@
 import Fastify from "fastify";
-import rawBody from "@fastify/raw-body";
+import rawBody from "fastify-raw-body";
 
 async function bootstrap() {
   const app = Fastify({ logger: true });
 
-  // Raw body gerekiyorsa (ör: webhook signature doğrulama)
   await app.register(rawBody, {
     field: "rawBody",
     global: true,
@@ -22,7 +21,6 @@ async function bootstrap() {
 }
 
 bootstrap().catch((err) => {
-  // eslint-disable-next-line no-console
   console.error(err);
   process.exit(1);
 });
