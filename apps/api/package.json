@@ -19,13 +19,13 @@
     "@fastify/cors": "^7.0.0",
     "fastify-raw-body": "^4.2.0",
     "nanoid": "^5.0.7",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "@types/node": "^20.11.0"
   },
   "devDependencies": {
     "prisma": "^5.19.1",
     "tsx": "^4.16.2",
     "typescript": "^5.5.4",
-	"@types/node": "^20.11.0",
     "eslint": "^9.9.0",
     "@eslint/js": "^9.9.0",
     "globals": "^15.9.0"
